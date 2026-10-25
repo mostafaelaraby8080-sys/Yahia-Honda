@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Yahia Honda | قطع غيار وإكسسوارات الموتوسيكلات — دمياط</title>
+    <meta
+      name="description"
+      content="يحيى هوندا — معرض وإكسسوارات موتوسيكلات، مبيعات وصيانة منذ 2012 في دمياط. اطلب على واتساب."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="assets/logo.jpeg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+  <body>
+    <div id="demo" class="demo" style="display: none">
+      وضع تجريبي: المنتجات بتتحفظ في المتصفح ده بس. اربط Supabase (شوف README)
+      عشان الزباين يشوفوها.
+    </div>
+    <div class="orbs"><i></i><i></i><i></i></div>
+    <div id="store">
+      <div class="strip">
+        <img
+          src="assets/logo.jpeg"
+          alt="Yahia Honda — Show room &amp; accessories"
+        />
+      </div>
+      <header>
+        <div class="brand">
+          <div class="mark">Y</div>
+          <div>
+            <b>Yahia Honda</b><small>Show room &amp; accessories</small>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px">
+          <a
+            class="btn"
+            href="tel:01024173103"
+            style="text-decoration: none; color: inherit"
+            >📞 اتصل بينا</a
+          >
+          <button class="btn" id="adminBtn" type="button">دخول الإدارة</button>
+        </div>
+      </header>
+      <section class="hero">
+        <div>
+          <h1>كل اللي موتوسيكلَك محتاجه.. <span>هتلاقيه عندنا</span></h1>
+          <p>
+            قطع غيار وإكسسوارات — مبيعات وصيانة منذ 2012 في دمياط. ابعت طلبك على
+            واتساب.
+          </p>
+          <a
+            class="btn red"
+            href="#prods"
+            style="text-decoration: none; color: #fff"
+            >تصفح المنتجات</a
+          >
+        </div>
+      </section>
+      <main id="prods">
+        <h2 class="sec-h">كافة المنتجات</h2>
+        <div class="tools">
+          <input class="search" id="q" placeholder="دور على قطعة..." />
+          <select id="sort" aria-label="الترتيب">
+            <option value="new">الأحدث</option>
+            <option value="low">السعر: الأقل</option>
+            <option value="high">السعر: الأعلى</option>
+            <option value="fav">المفضلة ♥</option>
+          </select>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div class="grid" id="grid"></div>
+        <footer
+          style="
+            margin-top: 34px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+          "
+        >
+          <a
+            class="btn"
+            style="text-decoration: none; color: #fff"
+            href="tel:01024173103"
+            >📞 01024173103</a
+          >
+          <a
+            class="btn"
+            style="
+              text-decoration: none;
+              color: #fff;
+              background: #25d366;
+              border-color: #25d366;
+            "
+            href="https://wa.me/201024173103"
+            target="_blank"
+            rel="noopener"
+            >واتساب</a
+          >
+          <a
+            class="btn"
+            style="
+              text-decoration: none;
+              color: #fff;
+              background: #1877f2;
+              border-color: #1877f2;
+            "
+            href="https://www.facebook.com/share/1CRqTgG68A/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener"
+            >فيسبوك</a
+          >
+        </footer>
+        <p class="note">© Yahia Honda — دمياط</p>
+      </main>
+      <div class="fab">
+        <a
+          href="https://wa.me/201024173103"
+          target="_blank"
+          rel="noopener"
+          style="background: #25d366"
+          aria-label="واتساب"
+          >💬</a
+        >
+        <a href="tel:01024173103" style="background: #d4141c" aria-label="اتصال"
+          >📞</a
+        >
+      </div>
+    </div>
+
+    <div id="admin" class="adm">
+      <header>
+        <div class="brand">
+          <div class="mark">Y</div>
+          <div><b>لوحة تحكم Yahia Honda</b><small>إدارة المنتجات</small></div>
+        </div>
+        <div style="display: flex; gap: 6px">
+          <button class="btn" id="toStore" type="button">المتجر</button
+          ><button class="btn" id="logout" type="button">خروج</button>
+        </div>
+      </header>
+      <main>
+        <form
+          class="box"
+          style="max-width: none; margin-bottom: 24px"
+          id="addForm"
+        >
+          <h2 id="formTitle">إضافة منتج</h2>
+          <p id="formHint">ارفع صورة أو أكتر (لو للمنتج أكتر من لون)</p>
+          <input id="n" required placeholder="اسم المنتج" />
+          <select id="c" required></select>
+          <textarea
+            id="d"
+            placeholder="تفاصيل المنتج: الماركة، الموديل، المقاس..."
+          ></textarea>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
+            <input
+              id="pr"
+              type="number"
+              min="0"
+              step="0.01"
+              required
+              placeholder="السعر"
+            /><input id="st" type="number" min="0" placeholder="المخزون" />
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 8px;
+              margin-bottom: 10px;
+            "
+          >
+            <label class="pick" for="im">🖼️ اختر صور من الجهاز</label>
+            <label class="pick" for="cam">📷 التقط بالكاميرا</label>
+          </div>
+          <input id="im" class="hid" type="file" accept="image/*" multiple />
+          <input
+            id="cam"
+            class="hid"
+            type="file"
+            accept="image/*"
+            capture="environment"
+          />
+          <div id="thumbs" class="thumbs"></div>
+          <div id="imgcount" class="note" style="padding: 0 0 8px"></div>
+          <div class="err" id="aerr"></div>
+          <button class="btn red" style="width: 100%" id="saveBtn">
+            حفظ المنتج
+          </button>
+          <button
+            type="button"
+            class="btn"
+            style="width: 100%; margin-top: 8px; display: none"
+            id="cancelEdit"
+          >
+            إلغاء التعديل
+          </button>
+        </form>
+        <h2>المنتجات (<span id="cnt">0</span>)</h2>
+        <div id="arows"></div>
+      </main>
+    </div>
+
+    <div class="modal" id="m">
+      <form class="box" id="loginForm">
+        <h2>دخول لوحة المدير</h2>
+        <p>اكتب كلمة مرور المدير</p>
+        <input
+          type="password"
+          id="pw"
+          placeholder="كلمة المرور"
+          autocomplete="current-password"
+          required
+        />
+        <div class="err" id="err"></div>
+        <button class="btn red" style="width: 100%" id="loginBtn">
+          دخول آمن
+        </button>
+        <button
+          type="button"
+          class="btn"
+          style="width: 100%; margin-top: 8px"
+          id="cancel"
+        >
+          إلغاء
+        </button>
+      </form>
+    </div>
+    <div
+      id="toast"
+      style="
+        display: none;
+        position: fixed;
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        left: 50%;
+        transform: translateX(-50%);
+        background: #16a34a;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        z-index: 50;
+        max-width: 90%;
+        text-align: center;
+      "
+    ></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
